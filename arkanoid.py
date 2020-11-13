@@ -2,7 +2,6 @@
 
 import pygame
 import time
-import math
 
 
 #ROZMIARY
@@ -83,10 +82,9 @@ while True:
         gameDisplay.blit(text, ###
             (SCREEN_SIZE/2, SCREEN_SIZE/2)) ###
 
-    if ball_position[1]>= paddle_position[1]: #wyświetla info o przegranej
-        text = font.render(loser, True, (255,255,255)) ###
-        gameDisplay.blit(text, ###
-            (SCREEN_SIZE/2, SCREEN_SIZE/2)) ###
+    if ball_position[1]>= paddle_position[1]: # koniec gry -> wychodzi z gry
+        print(loser)
+        pygame.quit()
 
 
     pygame.display.update() #aktualizuje wyświetlany obraz
